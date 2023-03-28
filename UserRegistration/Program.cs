@@ -8,10 +8,10 @@ namespace UserRegistration
         static void Main(String[] args)
         {
             UserValidation userValidation = new UserValidation();
-            userValidation.ValidateFirstName("Abc");
-            userValidation.ValidateFirstName("Ab");
-            userValidation.ValidateFirstName("abcd");
-            userValidation.ValidateFirstName("Abcd");
+            userValidation.ValidateSecondName("Abc");
+            userValidation.ValidateSecondName("Ab");
+            userValidation.ValidateSecondName("abcd");
+            userValidation.ValidateSecondName("Abcd");
         }
     }
 }
