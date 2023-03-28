@@ -8,9 +8,9 @@ namespace UserRegistration
         static void Main(String[] args)
         {
             UserValidation userValidation = new UserValidation();
-            userValidation.ValidateMobileNumber("9154871234");
-            userValidation.ValidateMobileNumber("1234567890");
-            userValidation.ValidateMobileNumber("913455");
+            userValidation.ValidatePassWord("1Ab6abcd");
+            userValidation.ValidatePassWord("abc123");
+            userValidation.ValidatePassWord("123456789");
         }
     }
 }
