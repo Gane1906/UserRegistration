@@ -8,9 +8,9 @@ namespace UserRegistration
         static void Main(String[] args)
         {
             UserValidation userValidation = new UserValidation();
-            userValidation.ValidatePassWord("1Ab6abcd");
-            userValidation.ValidatePassWord("abc123");
-            userValidation.ValidatePassWord("123456A789");
+            userValidation.ValidatePassWord("A1babcdt");
+            userValidation.ValidatePassWord("abcABC1234");
+            userValidation.ValidatePassWord("123456A");
         }
     }
 }
