@@ -9,7 +9,7 @@ namespace UserRegistration
         {
             UserValidation userValidation = new UserValidation();
             userValidation.ValidatePassWord("1Ab6abcd");
-            userValidation.ValidatePassWord("abc123");
+            userValidation.ValidatePassWord("abc123AS");
             userValidation.ValidatePassWord("123456A789");
         }
     }
