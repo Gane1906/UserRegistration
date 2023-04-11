@@ -8,8 +8,7 @@ namespace UserRegistration
         static void Main(String[] args)
         {
             UserValidation userValidation = new UserValidation();
-            string[] email = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc11@abc.net", "abc-100@abc.net", "abc.100@abc.com.au" };
-            userValidation.ValidateEmail(email);
+            Console.WriteLine(userValidation.ValidateFirstName("G"));
         }
     }
 }

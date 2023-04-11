@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace UserRegistration
 {
@@ -16,37 +17,74 @@ namespace UserRegistration
         public static string PASSWORD = "^(?=[a-zA-Z0-9#@$?-_]{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).*$";
         public string ValidateFirstName(string name)
         {
-            if (Regex.IsMatch(name, FIRST_NAME))
-                return "Valid first name";
-            return "Inalid first name";
+            string res = "";
+            try
+            {
+                if (Regex.IsMatch(name, FIRST_NAME))
+                    res="Valid first name";
+            }
+            catch (Exception ex)
+            {
+                 throw new UserException(UserException.ExceptionType.INVALID_FIRSTNAME, "Invalid Firstname");
+            }
+            return res;
+           
         }
         public string ValidateLastName(string name)
         {
-            if (Regex.IsMatch(name, LAST_NAME))
-                return "Valid Last name";
-            return "Invalid Last name";
+            string res = "";
+            try
+            {
+                if (Regex.IsMatch(name, LAST_NAME))
+                    res = "Valid last name";
+            }
+            catch (Exception ex)
+            {
+                throw new UserException(UserException.ExceptionType.INVALID_LASTNAME, "Invalid Lastname");
+            }
+            return res;
         }
         public string ValidateEmail(string eMail)
         {
-            foreach(var mail in eMail)
+            string res = "";
+            try
             {
-                if (Regex.IsMatch(mail, E_MAIL))
-                    return "Valid email";
-                return "Invalid email";
+                if (Regex.IsMatch(eMail, E_MAIL))
+                    res = "Valid email";
             }
-            return "";
+            catch (Exception ex)
+            {
+                throw new UserException(UserException.ExceptionType.INVALID_EMAIL, "Invalid email");
+            }
+            return res;
         }
         public string ValidateMobileNumber(string number)
         {
-            if (Regex.IsMatch(number, MOBILE_NUMBER))
-                return "Valid mobile number";
-            return "Inalid mobile number";
+            string res = "";
+            try
+            {
+                if (Regex.IsMatch(number, MOBILE_NUMBER))
+                    res = "Valid mobile number";
+            }
+            catch (Exception ex)
+            {
+                throw new UserException(UserException.ExceptionType.INVALID_MOBILENUMBER, "Invalid mobile number");
+            }
+            return res;
         }
         public string ValidatePassWord(string passWord)
         {
-            if (Regex.IsMatch(passWord, PASSWORD))
-                return "Valid password";
-            return "Invalid password";
+            string res = "";
+            try
+            {
+                if (Regex.IsMatch(passWord, PASSWORD))
+                    res = "Valid first name";
+            }
+            catch (Exception ex)
+            {
+                throw new UserException(UserException.ExceptionType.INVALID_PASSWORD, "Invalid password");
+            }
+            return res;
         }
 
     }

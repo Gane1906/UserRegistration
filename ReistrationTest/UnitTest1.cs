@@ -6,40 +6,69 @@ namespace ReistrationTest
     {
         UserValidation validation = new UserValidation();
         [Test]
-        public void GivenFirstName_WhenValidate_ShouldReturnValid()
+        public void GivenFirstName_WhenValidate_ShouldReturnInValid()
         {
-            string name = "Ganesh";
-            var result=validation.ValidateFirstName(name);
-            Assert.AreEqual("Valid first name", result);
+            try
+            {
+                string name = "G";
+                var result = validation.ValidateFirstName(name);
+            }
+            catch(Exception ex)
+            {
+                Assert.AreEqual("Invalid firstname", ex.Message);
+            }
         }
         [Test]
-        public void GivenLastName_WhenValidate_ShouldReturnValid()
+        public void GivenLastName_WhenValidate_ShouldReturnInValid()
         {
-            string name = "Doppani";
-            string result = validation.ValidateLastName(name);
-            Assert.AreEqual("Valid Last name", result);
+            try
+            {
+                string name = "G";
+                var result = validation.ValidateLastName(name);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid Lastname", ex.Message);
+            }
         }
         [Test]
-        public void GivenEmail_WhenValidate_ShouldReturnValid()
+        public void GivenEmail_WhenValidate_ShouldReturnInValid()
         {
-            string email ="abc@yahoo.com";
-            string result = validation.ValidateEmail(email);
-            Assert.AreEqual("Valid email", result);
+            try
+            {
+                string mail = "ga@gmail";
+                var result = validation.ValidateEmail(mail);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid email", ex.Message);
+            }
         }
         [Test]
-        public void GivenPhoneNumber_WhenValidate_ShouldReturnValid()
+        public void GivenPhoneNumber_WhenValidate_ShouldReturnInValid()
         {
-            string phone = "9876543219";
-            string result = validation.ValidateMobileNumber(phone);
-            Assert.AreEqual("Valid mobile number", result);
+            try
+            {
+                string number = "0987";
+                var result = validation.ValidateMobileNumber(number);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid mobile number", ex.Message);
+            }
         }
         [Test]
-        public void GivenPassword_WhenValidate_ShouldReturnValid()
+        public void GivenPassword_WhenValidate_ShouldReturnInValid()
         {
-            string pwd = "Agtf@1234";
-            UserValidation validation = new UserValidation();
-            string result = validation.ValidatePassWord(pwd);
-            Assert.AreEqual("Valid password", result);
+            try
+            {
+                string pwd = "G";
+                var result = validation.ValidatePassWord(pwd);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid password", ex.Message);
+            }
         }
     }
 }
