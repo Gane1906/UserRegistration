@@ -24,13 +24,17 @@ namespace UserRegistration
         {
             if (Regex.IsMatch(name, LAST_NAME))
                 return "Valid Last name";
-            return "Inalid Last name";
+            return "Invalid Last name";
         }
-            public string ValidateEmail(string eMail)
+        public string ValidateEmail(string eMail)
         {
-            if (Regex.IsMatch(eMail, E_MAIL))
-                return "Valid email";
-            return "Inalid email";
+            foreach(var mail in eMail)
+            {
+                if (Regex.IsMatch(mail, E_MAIL))
+                    return "Valid email";
+                return "Invalid email";
+            }
+            return "";
         }
         public string ValidateMobileNumber(string number)
         {
@@ -42,7 +46,7 @@ namespace UserRegistration
         {
             if (Regex.IsMatch(passWord, PASSWORD))
                 return "Valid password";
-            return "Inalid password";
+            return "Invalid password";
         }
 
     }
